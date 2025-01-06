@@ -7,8 +7,17 @@
   <ion-content>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo necessitatibus eos, porro vitae quasi voluptate aut itaque voluptatem obcaecati ex labore! Cumque et deserunt similique ad vero doloribus quos ut.</p>
     <ion-input type="text" label="Nombre" [(ngModel)]="nombre" placeholder="ingresa tu nombre "></ion-input>
+    <p class="error">{{ mensaje }}</p>
     <ion-button (click)="mostrar_nombre()" expand="block" fill="clear" shape="round">
       Enviar
     </ion-button>
+    <hr>
+    <p>aqui estoy usando grid y row </p>
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="6">Este es una columna de 6 </ion-col>
+        <ion-col size="6">Este es una columna de 6 </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-content>
 </ion-app>

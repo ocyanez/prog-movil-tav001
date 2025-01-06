@@ -10,9 +10,15 @@ export class HomePage {
 
   constructor() {}
   nombre : string = "";
+  mensaje : string = "";
 
   mostrar_nombre(){
-    console.log(this.nombre);
+   if (this.nombre == ""){
+    this.mensaje =" Error debe ingresar un nombre";
+   }
+   else{
+    this.mensaje = " ";
+   }
   }
 
 }
