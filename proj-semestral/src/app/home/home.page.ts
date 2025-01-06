@@ -9,5 +9,10 @@ import { Component } from '@angular/core';
 export class HomePage {
 
   constructor() {}
+  nombre : string = "";
+
+  mostrar_nombre(){
+    console.log(this.nombre);
+  }
 
 }
