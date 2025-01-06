@@ -1,0 +1,13 @@
+<ion-app>
+  <app-header [titulo_header]="'Registro'"></app-header>
+  <ion-content>
+    <ion-input type="text" [(ngModel)]="nombre"  label="Nombre" placeholder="Escribe tu nombre"></ion-input>
+    <ion-input type="text" [(ngModel)]="nombreUsuario" label="Nombre de usuario " placeholder="Escribe tu nombre de usuario "></ion-input>
+    <ion-input type="password" [(ngModel)]="password" label="contraseña" placeholder="ingresa tu contraseña "></ion-input>
+    <ion-input type="password" [(ngModel)]="password2" label="confirma contraseña " placeholder="confirma tu contraseña "></ion-input>
+    <p class="error">{{ mensaje }}</p>
+    <ion-button (click)="registrar_usuario()" expand="block" fill="clear" shape="round">
+      Enviar 
+    </ion-button>
+  </ion-content>
+</ion-app>
