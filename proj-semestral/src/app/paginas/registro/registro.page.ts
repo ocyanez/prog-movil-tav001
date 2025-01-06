@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-registro',
@@ -8,7 +10,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistroPage implements OnInit {
 
-  constructor() { }
+  constructor(private storage: Storage, route:Router) { 
+    this.init_storage();
+  }
 
   ngOnInit() {
   }
@@ -18,6 +22,10 @@ export class RegistroPage implements OnInit {
   password:string = "";
   password2:string = "";
   mensaje: string = "";
+
+ async init_storage(){
+   await this.storage.create()
+  }
   
   registrar_usuario(){
     if (this.nombre == "" || this.nombreUsuario == "" || this.password == "" || this.password2 == ""){
@@ -30,8 +38,8 @@ export class RegistroPage implements OnInit {
       else{
 
         this.mensaje= " "
+        this.storage.set("datosUsuario",{"nombre":this.nombre,"nombreUsuario":this.nombreUsuario,"password":this.password})
       }
-
     }
   }
 

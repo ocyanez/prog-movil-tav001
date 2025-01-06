@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-home',
@@ -8,9 +9,16 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private storage:Storage) {
+    this.init_storage();
+  }
   nombre : string = "";
+  NombreUsuario : string = "";
   mensaje : string = "";
+  async init_storage(){
+    await this.storage.create();
+
+  }
 
   mostrar_nombre(){
    if (this.nombre == ""){
@@ -19,6 +27,10 @@ export class HomePage {
    else{
     this.mensaje = " ";
    }
+  }
+  async ngOnInit() {
+    const datosUsuario = await this.storage.get('datosUsuario');
+    this.NombreUsuario = datosUsuario?.nombreUsuario
   }
 
 }
