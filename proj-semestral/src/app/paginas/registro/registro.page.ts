@@ -28,17 +28,20 @@ export class RegistroPage implements OnInit {
   }
   
   registrar_usuario(){
+    // validacion de campos vacios - en formulario de registro 
     if (this.nombre == "" || this.nombreUsuario == "" || this.password == "" || this.password2 == ""){
       this.mensaje= "Todos los campos deben ser llenados "
     }
     else{
+      // validacion de contraseñas iguales
       if (this.password != this.password2){
         this.mensaje="las contraseñas no coinciden "
       }
       else{
-
+        //alamcenar datos en el storage - crear el usuario  
         this.mensaje= " "
         this.storage.set("datosUsuario",{"nombre":this.nombre,"nombreUsuario":this.nombreUsuario,"password":this.password})
+        
       }
     }
   }
