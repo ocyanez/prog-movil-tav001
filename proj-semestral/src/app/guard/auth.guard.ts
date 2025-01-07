@@ -7,7 +7,14 @@ import {Storage} from '@ionic/storage-angular';
 })
 
 export class authGuard {
-  constructor(private storage:Storage, private route:Router ){}
+  constructor(private storage:Storage, private route:Router ){
+    this.init_storage();
+  }
+
+
+async init_storage(){
+  await this.storage.create()
+}
 
   canActivate : CanActivateFn = async(route,state)=>{
     const sessionActive = await this.storage.get("sessionID");
@@ -16,7 +23,7 @@ export class authGuard {
       
     }
     else{
-      return false;
+      return true ;
     }
   }
 }
