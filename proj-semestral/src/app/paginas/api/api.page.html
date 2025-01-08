@@ -1,0 +1,13 @@
+<ion-app>
+  <app-header [titulo_header]="'Solicitud API '"></app-header>
+  <ion-content>
+    <ion-item *ngFor="let info of datos">
+      <ion-label>
+        <h2> {{ info.strMeal }} </h2> 
+        <p>Categoria : {{ info.strCategory }}</p>
+        <a href="{{ info.strYoutube }}">Video instrucciones </a>
+        <img src="{{ info.strMealThumb }}" alt=" {{ info.strMeal }}" style="width: 200px; height: 200px;">
+      </ion-label>
+    </ion-item>
+  </ion-content>
+</ion-app>

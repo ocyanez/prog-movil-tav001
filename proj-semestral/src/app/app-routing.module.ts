@@ -21,6 +21,10 @@ const routes: Routes = [
     path: 'registro',
     loadChildren: () => import('./paginas/registro/registro.module').then( m => m.RegistroPageModule)
   },
+  {
+    path: 'api',
+    loadChildren: () => import('./paginas/api/api.module').then( m => m.ApiPageModule)
+  },
 ];
 
 @NgModule({
