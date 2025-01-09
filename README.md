@@ -44,11 +44,11 @@ Crearemos un componente que nos permitira utilizarlo en nuestra aplicacion
 **Nota** 
 Recordemos que para utilizar el componente dentro de nuestra pagina debemos importarlo en nuestra page.module.ts 
 
-**`ionic generate service nombreCarpeta/nombreservicio`**
+### 4 **`ionic generate service nombreCarpeta/nombreservicio`**
 
 nos permitira crear un servicio , esto nos puede servir para configurar y consumir una api por ejemplo 
 
-**`ionic generate guard nombreCarpeta/nombreGuard`**}
+### 5 **`ionic generate guard nombreCarpeta/nombreGuard`**}
 
 Nos permite crear un archivo en el que puedo configurar el comportamiento de la aplicacion frente a algunas rutas como por ejemplo si deseo que el usuario ha iniciado session se pueda redirigir de inmediato a home
 
