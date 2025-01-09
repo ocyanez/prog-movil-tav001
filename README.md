@@ -29,21 +29,28 @@ Cambia a la rama especificada (`nombre_Rama`). Después de usar este comando, to
 ## Comandos Ionic 
 
 ### 1. **`npm install -g @ionic/cli`**
-    Esto nos permitira instalar ionic en el codespace que estamos trabajando a nivel global, este ultimo es gracias al parametro -g 
+
+Esto nos permitira instalar ionic en el codespace que estamos trabajando a nivel global, este ultimo es gracias al parametro -g 
+
 ### 2 **`ionic generate page nombreCarpeta/nombrePagina`**
-    Crearemos una carpeta y en su interior creara una pagina 
+
+Crearemos una carpeta y en su interior creara una pagina 
 **Nota**
 Cuando creamos una pagina debemos ir al archivo page.ts para poder declarar la pagina como standalone: false 
 ### 3 **`ionic generate component nombreCarpeta/nombreComponente`**
-    Crearemos un componente que nos permitira utilizarlo en nuestra aplicacion 
+
+Crearemos un componente que nos permitira utilizarlo en nuestra aplicacion 
 
 **Nota** 
 Recordemos que para utilizar el componente dentro de nuestra pagina debemos importarlo en nuestra page.module.ts 
 
 **`ionic generate service nombreCarpeta/nombreservicio`**
-    nos permitira crear un servicio , esto nos puede servir para configurar y consumir una api por ejemplo 
-**`ionic generate guard nombreCarpeta/nombreGuard`**
-    Nos permite crear un archivo en el que puedo configurar el comportamiento de la aplicacion frente a algunas rutas como por ejemplo si deseo que el usuario ha iniciado session se pueda redirigir de inmediato a home
+
+nos permitira crear un servicio , esto nos puede servir para configurar y consumir una api por ejemplo 
+
+**`ionic generate guard nombreCarpeta/nombreGuard`**}
+
+Nos permite crear un archivo en el que puedo configurar el comportamiento de la aplicacion frente a algunas rutas como por ejemplo si deseo que el usuario ha iniciado session se pueda redirigir de inmediato a home
 
 **Nota** 
 Recuerda que el guard se activa en la pagina de rutas que es en el app.routing.module.ts el cual en la ruta que queremos afectar debemos agregar canActivate:NombreGuard 
