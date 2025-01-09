@@ -48,9 +48,19 @@ Recordemos que para utilizar el componente dentro de nuestra pagina debemos impo
 
 nos permitira crear un servicio , esto nos puede servir para configurar y consumir una api por ejemplo 
 
-### 5 **`ionic generate guard nombreCarpeta/nombreGuard`**}
+### 5 **`ionic generate guard nombreCarpeta/nombreGuard`**
 
 Nos permite crear un archivo en el que puedo configurar el comportamiento de la aplicacion frente a algunas rutas como por ejemplo si deseo que el usuario ha iniciado session se pueda redirigir de inmediato a home
 
 **Nota** 
 Recuerda que el guard se activa en la pagina de rutas que es en el app.routing.module.ts el cual en la ruta que queremos afectar debemos agregar canActivate:NombreGuard 
+
+### instalar ionic Storage 
+
+### 1 **`npm install @ionic/storage-angular `**
+con esto instalaremos ionic storage para el proyecto
+
+### 2 **`importar el modulo para utilizarlo en el proyecto  `**
+para que en nuestro proyecto pueda funcionar ionic storage debemos ir a nuestro archivo app.module.ts y en el debemos importar 
+    IonicStorageModule.forRoot()
+Luego de esto podremos recien importar he utilizar el storage en nuestras paginas 
