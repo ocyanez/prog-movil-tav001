@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   firebaseConfig: {
-    apiKey: "AIzaSyDAroSki7CRuo9bQWPn5ayEacRa0Tv_T", //api key - current key 
+    apiKey: "AIzaSyDAroSki7CRuo9bQWPn5ayEacRa0Tv_T-o", //api key - current key 
     authDomain: "programacion-movil-tav-2025-01.firebaseapp.com", // project id + firebaseapp.com
     projectId: "programacion-movil-tav-2025-01", // project id
     storageBucket: "programacion-movil-tav-2025-01.firebasestorage.app", // storage bucket

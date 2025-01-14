@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { Storage } from '@ionic/storage-angular';
 
@@ -10,7 +11,7 @@ import { Storage } from '@ionic/storage-angular';
 })
 export class RegistroPage implements OnInit {
 
-  constructor(private storage: Storage, route:Router) { 
+  constructor(private storage: Storage, private route:Router, private firebase:AngularFireAuth) { 
     this.init_storage();
   }
 
@@ -45,6 +46,13 @@ export class RegistroPage implements OnInit {
       }
     }
   }
+
+create_user(){
+  this.firebase.createUserWithEmailAndPassword(this.nombreUsuario,this.password).then(res=>{
+    console.log(res);
+    this.route.navigate(['/login']);
+  }).catch(err=>console.log(err));
+}
 
 
 

@@ -5,6 +5,7 @@ import { HeaderComponent } from 'src/app/componenetes/header/header.component';
 import { Router } from '@angular/router';
 // importar storage para almacenar datos
 import { Storage } from '@ionic/storage-angular';
+import { FirebaseloginService } from 'src/app/servicios/firebaselogin.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ import { Storage } from '@ionic/storage-angular';
 })
 export class LoginPage implements OnInit {
   // constructor para inicializar el storage y el router
-  constructor(private route:Router, private storage:Storage ) { 
+  constructor(private route:Router, private storage:Storage,private firebase:FirebaseloginService ) { 
     this.init_storage();
   }
 
@@ -37,6 +38,16 @@ export class LoginPage implements OnInit {
   async init_storage(){
     await this.storage.create()
   };
+
+  iniciar_sesionF(){
+    this.firebase.login(this.usuario,this.password).then(res=>{
+      console.log(res);
+      console.log("Access token => "+ res.user);
+      this.route.navigate(['/home']);
+    }).catch(err=>console.log(err));
+
+  }
+
 
 
 // funcion para iniciar sesion
