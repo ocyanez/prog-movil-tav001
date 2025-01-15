@@ -31,6 +31,7 @@ export class LoginPage implements OnInit {
   usuario:string = "";
   password:string = "";
   mensaje: string = "";
+  user:any
 
 
 
@@ -41,9 +42,15 @@ export class LoginPage implements OnInit {
 
   iniciar_sesionF(){
     this.firebase.login(this.usuario,this.password).then(res=>{
+      this.firebase.obtenerDatos(this.usuario).subscribe(user=>{
+        this.user = user;
+        console.log(this.usuario)
+        console.log("este es el correo "+this.user.data.email)
+        this.storage.set("datosFirebase",{"correo":this.user.data.email})
+      })
       console.log(res);
-      console.log("Access token => "+ res.user);
       this.route.navigate(['/home']);
+
     }).catch(err=>console.log(err));
 
   }
