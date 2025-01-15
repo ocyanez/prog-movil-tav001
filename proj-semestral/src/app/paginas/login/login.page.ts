@@ -6,6 +6,10 @@ import { Router } from '@angular/router';
 // importar storage para almacenar datos
 import { Storage } from '@ionic/storage-angular';
 import { FirebaseloginService } from 'src/app/servicios/firebaselogin.service';
+import { Geolocation } from '@capacitor/geolocation';
+import { Camera,CameraResultType,CameraSource } from '@capacitor/camera';
+import {defineCustomElements} from '@ionic/pwa-elements/loader'; 
+defineCustomElements(window);
 
 @Component({
   selector: 'app-login',
@@ -17,6 +21,7 @@ export class LoginPage implements OnInit {
   // constructor para inicializar el storage y el router
   constructor(private route:Router, private storage:Storage,private firebase:FirebaseloginService ) { 
     this.init_storage();
+    this.obtenerUbicacion();
   }
 
   // funcion para obtener datos del storage
@@ -31,6 +36,7 @@ export class LoginPage implements OnInit {
   usuario:string = "";
   password:string = "";
   mensaje: string = "";
+  user:any
 
 
 
@@ -41,9 +47,15 @@ export class LoginPage implements OnInit {
 
   iniciar_sesionF(){
     this.firebase.login(this.usuario,this.password).then(res=>{
+      this.firebase.obtenerDatos(this.usuario).subscribe(user=>{
+        this.user = user;
+        console.log(this.usuario)
+        console.log("este es el correo "+this.user.data.email)
+        this.storage.set("datosFirebase",{"correo":this.user.data.email})
+      })
       console.log(res);
-      console.log("Access token => "+ res.user);
       this.route.navigate(['/home']);
+
     }).catch(err=>console.log(err));
 
   }
@@ -66,5 +78,23 @@ export class LoginPage implements OnInit {
     }
 
   };
+  // funcion para obtener ubicacion
+  async obtenerUbicacion(){
+    const coordenadas = await Geolocation.getCurrentPosition();
+    console.log("Longitud "+coordenadas.coords.longitude);
+    console.log("Latitud "+coordenadas.coords.latitude);
+    console.log("accuracy "+coordenadas.coords.accuracy);
+    console.log("Altitud "+coordenadas.coords.altitude);
+  }
+
+  async tomarfoto(){
+    const image = await Camera.getPhoto({
+      resultType: CameraResultType.Uri,
+      source: CameraSource.Camera,
+      quality: 100
+    });
+    console.log("resultado de la camara "+ image.webPath);
+  }
+
 
 }
