@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "937040620377",
+    "project_id": "programacion-movil-tav-2025-01",
+    "storage_bucket": "programacion-movil-tav-2025-01.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:937040620377:android:1fe503953e201800adfa48",
+        "android_client_info": {
+          "package_name": "programacion_movil_tav_001.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAroSki7CRuo9bQWPn5ayEacRa0Tv_T-o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
