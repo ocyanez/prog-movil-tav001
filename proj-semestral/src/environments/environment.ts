@@ -11,6 +11,9 @@ export const environment = {
     storageBucket: "programacion-movil-tav-2025-01.firebasestorage.app", // storage bucket
     messagingSenderId: "937040620377",//project number 
     appId: "1:937040620377:android:1fe503953e201800adfa48" //mobilesdk_app_id
+  },
+  mapbox: {
+    accessToken: 'aqui debes colocar tu api key de mapbox'
   }
 };
 

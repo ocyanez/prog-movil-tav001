@@ -1,0 +1,16 @@
+Instrucciones de mapa 
+Crearse una cuenta en mapbox 
+
+instalar las siguientes librerias en el proyecto 
+npm install mapbox-gl
+npm install @types/mapbox-gl 
+
+crear el component del mapa y aplicar configuracion de mapa.component.html , mapa.component.scss y mapa.component.ts 
+
+agregar lo siguiente en tsconfig.json 
+"allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+
+importar el componente en la pagina donde se utilizara el mapa 
+
+agregar componente en la pagina html donde quiero que se vea el mapa 
