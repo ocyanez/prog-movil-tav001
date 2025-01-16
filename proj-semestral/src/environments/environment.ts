@@ -13,7 +13,7 @@ export const environment = {
     appId: "1:937040620377:android:1fe503953e201800adfa48" //mobilesdk_app_id
   },
   mapbox: {
-    accessToken: 'Colocar tu public api key de mapbox'
+    accessToken: 'aqui debes colocar tu api key de mapbox'
   }
 };
 
